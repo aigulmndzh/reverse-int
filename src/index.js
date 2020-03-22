@@ -1,16 +1,9 @@
-var reverse = function(x) {
-  var xstring = x.toString();
-  var result = "";
+  module.exports = function reverse (n) {
+    let transformToString = n.toString();
+    let splitedN = transformToString.split('');
+    let reversedN = splitedN.reverse();
+    let joinedN = reversedN.join('');
 
-  if (xstring[0] === '-') {
-    result += '-';
-    xstring = xstring.slice(1);
-  } else if (xstring[xstring.length - 1] === '0') {
-    xstring = xstring.slice(0, xstring.lenth - 1);
+    return parseFloat(joinedN);
+      
   }
-  for (var i = xstring.length - 1; i>= 0; i--) {
-    result += xstring[i];
-  }
-
-  return result;
-}
